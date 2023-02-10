@@ -1,0 +1,32 @@
+<h1>blogs</h1>
+
+<ul>
+  <% @blogs.each do |blog| %>
+    <li>
+      <a href="/blogs/<%= blog.id %>">
+        <%= blog.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+<body mode="maker">
+  <div class="blockly-editor">
+    <button class="mode-maker mdl-button" id="edit">Edit</button>
+    <button class="mode-edit mdl-button mdl-js-button" id="done">Done</button>
+    <button class="mode-blockly mdl-button mdl-js-button" id="save">Save</button>
+
+    <div id="blocklyDiv" style="height: 500px; width: 500px;"></div>
+  </div>
+
+  <script src="https://unpkg.com/blockly"></script>
+  <!-- <script src="https://unpkg.com/blockly/javascript_compressed"></script> -->
+  <%= javascript_path 'generators/ruby_generator'%>
+  <!-- <script type="module" src="../generators/ruby_generator.js"></script> -->
+  <script type="text/javascript">
+    const runCode = () => {
+      const code = rubyGenerator.workspaceToCode(ws);
+      codeDiv.innerText = code;
+    };
+  </script>
+  <!-- <script src="ruby_toolbox.js"></script> -->
+</body>
