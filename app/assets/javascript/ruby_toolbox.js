@@ -9,7 +9,9 @@
 
   function handlePlay(event) {
     loadWorkspace(event.target);
-    let code = Blockly.Ruby.workspaceToCode(Blockly.common.getMainWorkspace());
+
+    console.log(rubyGenerator.workspaceToCode(workspace));
+    // let code = Blockly.Ruby.workspaceToCode(Blockly.common.getMainWorkspace());
 
     try {
       console.log('ruby');
@@ -21,7 +23,7 @@
   }
 
   function save(button) {
-    button.blocklySave = Blockly.serialization.workspaces.save(Blockly.common.getMainWorkspace());
+    // button.blocklySave = Blockly.serialization.workspaces.save(Blockly.common.getMainWorkspace());
   }
 
   function loadWorkspace(button) {

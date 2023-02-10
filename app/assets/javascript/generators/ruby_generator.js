@@ -1,1 +1,1 @@
-export const rubyGenerator = new Blockly.Generator('RUBY');
+const rubyGenerator = new Blockly.Generator('RUBY');
