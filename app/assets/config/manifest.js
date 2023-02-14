@@ -5,3 +5,4 @@
 //= link toolbox.js
 //= link ruby_toolbox.js
 //= link generators/ruby_generator.js
+//= link blocks/ruby.js

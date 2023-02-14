@@ -50,7 +50,6 @@
   function enableMakerMode() {
     document.body.setAttribute('mode', 'maker');
     let buttons = document.getElementsByTagName("button");
-    console.log(buttons);
     Array.from(buttons).map(btn => {
       btn.addEventListener('click', handlePlay);
       btn.removeEventListener('click', enableBlocklyMode);
@@ -91,6 +90,10 @@
       },
       {
         "kind": "block",
+        "type": "logic_boolean"
+      },
+      {
+        "kind": "block",
         "type": "math_number"
       },
       {
@@ -103,8 +106,12 @@
       },
       {
         "kind": "block",
-        "type": "text_print"
+        "type": "p"
       },
+      {
+        "kind": "block",
+        "type": "logic_null"
+      }
     ]
   }
 
