@@ -10,13 +10,10 @@
   function handlePlay(event) {
     loadWorkspace(event.target);
 
-    console.log(rubyGenerator.workspaceToCode(workspace));
-    // let code = Blockly.Ruby.workspaceToCode(Blockly.common.getMainWorkspace());
+    let code = rubyGenerator.workspaceToCode(workspace);
 
     try {
-      console.log('ruby');
-      console.log(code);
-      console.log(eval(code));
+      document.getElementById("block").value = code;
     } catch (error) {
       console.log(error);
     }

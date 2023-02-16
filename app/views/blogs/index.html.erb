@@ -12,7 +12,18 @@
 <body mode="maker">
   <div class="blockly-editor">
     <button class="mode-maker mdl-button" id="edit">Edit</button>
-    <button class="mode-edit mdl-button mdl-js-button" id="done">Done</button>
+
+
+    <form action="/blocks" method="post">
+      <input id="block" name="block" value="nil" type="hidden"/>
+      <button type="submit">Done</button>
+    </form>
+
+
+    <div class="mode-edit mdl-button mdl-js-button" id="done" >
+      <%= button_to "Done", { controller: "blocks", action: "create" }, remote: true %>
+    </div>
+
     <button class="mode-blockly mdl-button mdl-js-button" id="save">Save</button>
 
     <div id="blocklyDiv" style="height: 500px; width: 500px;"></div>
