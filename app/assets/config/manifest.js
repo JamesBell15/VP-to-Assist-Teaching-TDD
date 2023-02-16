@@ -6,3 +6,4 @@
 //= link ruby_toolbox.js
 //= link generators/ruby_generator.js
 //= link blocks/ruby.js
+//= link banner_alert.js

@@ -34,3 +34,21 @@ rubyGenerator['p'] = function(block) {
   const code = `p ${value}`;
   return code;
 };
+
+// it block
+rubyGenerator['it'] = function(block) {
+  const value = rubyGenerator.valueToCode(
+      block, 'IT_VALUE', rubyGenerator.PRECEDENCE);
+  const statement = rubyGenerator.statementToCode(
+      block, 'IT_STATEMENT', rubyGenerator.PRECEDENCE);
+  const code = `it ${value} do\n${statement}\nend`;
+  return code;
+};
+
+// describe
+rubyGenerator['describe'] = function(block) {
+  const value = rubyGenerator.valueToCode(
+      block, 'PATH', rubyGenerator.PRECEDENCE);
+  const code = value;
+  return code;
+};

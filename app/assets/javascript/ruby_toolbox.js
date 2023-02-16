@@ -6,7 +6,6 @@
 
 
  (function() {
-
   function handlePlay(event) {
     loadWorkspace(event.target);
 
@@ -14,6 +13,8 @@
 
     try {
       document.getElementById("block").value = code;
+      showBanner();
+
     } catch (error) {
       console.log(error);
     }
@@ -108,6 +109,14 @@
       {
         "kind": "block",
         "type": "logic_null"
+      },
+      {
+        "kind": "block",
+        "type": "it"
+      },
+      {
+        "kind": "block",
+        "type": "describe"
       }
     ]
   }

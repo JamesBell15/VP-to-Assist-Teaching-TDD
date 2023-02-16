@@ -1,3 +1,7 @@
+<%= stylesheet_link_tag "style" %>
+<%= javascript_include_tag "banner_alert" %>
+<div id="banner" class="banner blueStyle">Saved successfully</div>
+
 <h1>blogs</h1>
 
 <ul>
@@ -16,13 +20,8 @@
 
     <form action="/blocks" method="post">
       <input id="block" name="block" value="nil" type="hidden"/>
-      <button type="submit">Done</button>
+      <button class="mode-edit mdl-button mdl-js-button" id="done" type="submit">Done</button>
     </form>
-
-
-    <div class="mode-edit mdl-button mdl-js-button" id="done" >
-      <%= button_to "Done", { controller: "blocks", action: "create" }, remote: true %>
-    </div>
 
     <button class="mode-blockly mdl-button mdl-js-button" id="save">Save</button>
 
