@@ -48,7 +48,7 @@ rubyGenerator['it'] = function(block) {
 // describe
 rubyGenerator['describe'] = function(block) {
   const value = rubyGenerator.valueToCode(
-      block, 'PATH', rubyGenerator.PRECEDENCE);
-  const code = value;
+      block, 'PATH_VALUE', rubyGenerator.PRECEDENCE);
+  const code = `${value}`;
   return code;
 };

@@ -43,7 +43,7 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   "args0": [
     {
       "type": "field_input",
-      "name": "PATH",
+      "name": "PATH_VALUE",
       "text": "path to file"
     }
   ],
