@@ -1,6 +1,15 @@
 const rubyGenerator = new Blockly.Generator('RUBY');
 rubyGenerator.PRECEDENCE = 0;
 
+// allow blocks to join together
+rubyGenerator.scrub_ = function(block, code, thisOnly) {
+  const nextBlock =
+      block.nextConnection && block.nextConnection.targetBlock();
+  if (nextBlock && !thisOnly) {
+    return code + '\n' + rubyGenerator.blockToCode(nextBlock);
+  }
+  return code;
+};
 
 // value generators
 // nil
@@ -37,18 +46,16 @@ rubyGenerator['p'] = function(block) {
 
 // it block
 rubyGenerator['it'] = function(block) {
-  const value = rubyGenerator.valueToCode(
-      block, 'IT_VALUE', rubyGenerator.PRECEDENCE);
+  const value = block.getFieldValue('IT_VALUE')
   const statement = rubyGenerator.statementToCode(
       block, 'IT_STATEMENT', rubyGenerator.PRECEDENCE);
-  const code = `it ${value} do\n${statement}\nend`;
+  const code = `it "${value}" do\n${statement}\nend`;
   return code;
 };
 
 // describe
 rubyGenerator['describe'] = function(block) {
-  const value = rubyGenerator.valueToCode(
-      block, 'PATH', rubyGenerator.PRECEDENCE);
+  const value = block.getFieldValue('PATH');
   const code = value;
   return code;
 };
