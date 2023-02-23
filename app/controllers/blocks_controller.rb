@@ -3,6 +3,10 @@ class BlocksController < ApplicationController
 
   def create
     p params[:block]
+
+    File.open("spec/services/testing_spec.rb", "w") { |f|
+      f.write params[:block]
+    }
   end
 
   def block_params
