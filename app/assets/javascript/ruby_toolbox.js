@@ -116,7 +116,11 @@
       },
       {
         "kind": "block",
-        "type": "describe"
+        "type": "expect"
+      },
+      {
+        "kind": "block",
+        "type": "path_to"
       }
     ]
   }

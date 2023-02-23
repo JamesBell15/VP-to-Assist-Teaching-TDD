@@ -38,8 +38,8 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 {
-  "type": "describe",
-  "message0": "Describe %1",
+  "type": "path_to",
+  "message0": "Path to %1",
   "args0": [
     {
       "type": "field_input",
@@ -49,6 +49,28 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   ],
   "nextStatement": null,
   "colour": 345,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "expect",
+  "message0": "expect %1 to %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "EXPECT_VALUE",
+      "text": "result"
+    },
+    {
+      "type": "input_statement",
+      "name": "EXPECT_STATMENT",
+      "align": "CENTRE"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 180,
   "tooltip": "",
   "helpUrl": ""
 }

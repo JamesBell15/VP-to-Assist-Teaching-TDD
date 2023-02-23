@@ -53,8 +53,17 @@ rubyGenerator['it'] = function(block) {
   return code;
 };
 
-// describe
-rubyGenerator['describe'] = function(block) {
+// expects
+rubyGenerator['expect'] = function(block) {
+  const value = block.getFieldValue('EXPECT_VALUE')
+  const statement = rubyGenerator.statementToCode(
+      block, 'EXPECT_STATEMENT', rubyGenerator.PRECEDENCE);
+  const code = `expect("${value}").to ${statement}`;
+  return code;
+};
+
+// path to
+rubyGenerator['path_to'] = function(block) {
   const value = block.getFieldValue('PATH');
   const code = value;
   return code;
