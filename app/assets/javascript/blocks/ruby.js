@@ -63,7 +63,7 @@ const blocks = Blockly.defineBlocksWithJsonArray([
     },
     {
       "type": "input_statement",
-      "name": "EXPECT_STATMENT",
+      "name": "EXPECT_STATEMENT",
       "align": "CENTRE"
     }
   ],

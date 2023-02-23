@@ -58,7 +58,7 @@ rubyGenerator['expect'] = function(block) {
   const value = block.getFieldValue('EXPECT_VALUE')
   const statement = rubyGenerator.statementToCode(
       block, 'EXPECT_STATEMENT', rubyGenerator.PRECEDENCE);
-  const code = `expect("${value}").to ${statement}`;
+  const code = `expect("${value}").to${statement}`;
   return code;
 };
 
