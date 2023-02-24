@@ -36,3 +36,5 @@
 
 # get rid of DS_store
 .DS_Store
+spec/services/testing_spec.rb
+app/services/testing.rb
