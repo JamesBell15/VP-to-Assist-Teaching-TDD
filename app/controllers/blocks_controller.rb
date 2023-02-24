@@ -2,10 +2,10 @@ class BlocksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    p params[:block]
+    file, code = params[:block].split("__")
 
-    File.open("spec/services/testing_spec.rb", "w") { |f|
-      f.write params[:block]
+    File.open("spec/" + file, "w") { |f|
+      f.write code
     }
   end
 

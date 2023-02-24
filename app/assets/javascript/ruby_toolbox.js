@@ -104,11 +104,15 @@
       },
       {
         "kind": "block",
+        "type": "logic_null"
+      },
+      {
+        "kind": "block",
         "type": "p"
       },
       {
         "kind": "block",
-        "type": "logic_null"
+        "type": "describe"
       },
       {
         "kind": "block",
@@ -117,6 +121,10 @@
       {
         "kind": "block",
         "type": "expect"
+      },
+      {
+        "kind": "block",
+        "type": "eq"
       },
       {
         "kind": "block",

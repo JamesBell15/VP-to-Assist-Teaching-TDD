@@ -36,11 +36,22 @@ rubyGenerator['logic_boolean'] = function(block) {
   return [code, rubyGenerator.PRECEDENCE];
 };
 
+// statement generators
 // print text
 rubyGenerator['p'] = function(block) {
   const value = rubyGenerator.valueToCode(
       block, 'P_VALUE', rubyGenerator.PRECEDENCE);
   const code = `p ${value}`;
+  return code;
+};
+
+// describe
+// it block
+rubyGenerator['describe'] = function(block) {
+  const value = block.getFieldValue('DESCRIBE_VALUE')
+  const statement = rubyGenerator.statementToCode(
+      block, 'DESCRIBE_STATEMENT', rubyGenerator.PRECEDENCE);
+  const code = `RSpec.describe "${value}" do\n${statement}\nend`;
   return code;
 };
 
@@ -58,7 +69,14 @@ rubyGenerator['expect'] = function(block) {
   const value = block.getFieldValue('EXPECT_VALUE')
   const statement = rubyGenerator.statementToCode(
       block, 'EXPECT_STATEMENT', rubyGenerator.PRECEDENCE);
-  const code = `expect("${value}").to${statement}`;
+  const code = `expect(${value}).to${statement}`;
+  return code;
+};
+
+// eq
+rubyGenerator['eq'] = function(block) {
+  const value = block.getFieldValue('EQ_VALUE')
+  const code = `eq(${value})`;
   return code;
 };
 
@@ -66,5 +84,5 @@ rubyGenerator['expect'] = function(block) {
 rubyGenerator['path_to'] = function(block) {
   const value = block.getFieldValue('PATH');
   const code = value;
-  return code;
+  return code + "__";
 };

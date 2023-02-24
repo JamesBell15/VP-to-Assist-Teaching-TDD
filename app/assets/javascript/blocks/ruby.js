@@ -33,6 +33,7 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   ],
   "inputsInline": true,
   "previousStatement": null,
+  "nextStatement": null,
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
@@ -62,7 +63,7 @@ const blocks = Blockly.defineBlocksWithJsonArray([
       "text": "result"
     },
     {
-      "type": "input_statement",
+      "type": "input_value",
       "name": "EXPECT_STATEMENT",
       "align": "CENTRE"
     }
@@ -71,6 +72,46 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   "previousStatement": null,
   "nextStatement": null,
   "colour": 180,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "eq",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_label_serializable",
+      "name": "NAME",
+      "text": "eq"
+    },
+    {
+      "type": "field_input",
+      "name": "EQ_VALUE",
+      "text": "value"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "describe",
+  "message0": "Describe %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "DESCRIBE_VALUE",
+      "text": "class"
+    },
+    {
+      "type": "input_statement",
+      "name": "DESCRIBE_STATEMENT"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "colour": 345,
   "tooltip": "",
   "helpUrl": ""
 }
