@@ -116,6 +116,10 @@
       },
       {
         "kind": "block",
+        "type": "context"
+      },
+      {
+        "kind": "block",
         "type": "it"
       },
       {

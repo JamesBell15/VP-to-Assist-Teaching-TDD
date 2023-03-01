@@ -114,6 +114,26 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   "colour": 345,
   "tooltip": "",
   "helpUrl": ""
+},
+{
+  "type": "context",
+  "message0": "context %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "CONTEXT_VALUE",
+      "text": "conditions"
+    },
+    {
+      "type": "input_statement",
+      "name": "CONTEXT_STATEMENT"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
 }
 ]);
 

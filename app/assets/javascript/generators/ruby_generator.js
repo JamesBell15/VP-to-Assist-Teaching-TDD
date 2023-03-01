@@ -55,6 +55,15 @@ rubyGenerator['describe'] = function(block) {
   return code;
 };
 
+// context block
+rubyGenerator['context'] = function(block) {
+  const value = block.getFieldValue('CONTEXT_VALUE')
+  const statement = rubyGenerator.statementToCode(
+      block, 'CONTEXT_STATEMENT', rubyGenerator.PRECEDENCE);
+  const code = `context "${value}" do\n${statement}\nend`;
+  return code;
+};
+
 // it block
 rubyGenerator['it'] = function(block) {
   const value = block.getFieldValue('IT_VALUE')
