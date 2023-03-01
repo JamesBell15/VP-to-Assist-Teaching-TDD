@@ -1,5 +1,5 @@
 class Testing
-  def sum(a, b)
+  def self.sum(a, b)
     a + b
   end
 end
