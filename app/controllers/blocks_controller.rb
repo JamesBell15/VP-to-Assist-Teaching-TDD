@@ -2,12 +2,14 @@ class BlocksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    path, code = params[:block].split("__")
+    file, code = params[:block].split("__")
 
-    spec_path = "spec/#{path}_spec.rb"
+    spec_path = "spec/#{file}_spec.rb"
 
-    if valid_path?(spec_path)
-      write_spec(spec_path)
+
+
+    if valid_file?(spec_path)
+      write_spec(spec_path, code)
     end
   end
 
@@ -17,12 +19,12 @@ class BlocksController < ApplicationController
 
   private
 
-  def valid_path?(path)
-    File.directory?(path)
+  def valid_file?(path)
+    File.file?(path)
   end
 
-  def write_spec(path)
-    File.open(spec_path, "w") { |f|
+  def write_spec(path, code)
+    File.open(path, "w") { |f|
       f.write code
     }
   end
