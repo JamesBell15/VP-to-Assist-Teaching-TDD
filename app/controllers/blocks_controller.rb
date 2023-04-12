@@ -6,10 +6,11 @@ class BlocksController < ApplicationController
 
     spec_path = "spec/#{file}_spec.rb"
 
-
-
-    if valid_file?(spec_path)
+    if valid_file?(file)
       write_spec(spec_path, code)
+      flash[:notice] = "Success check #{spec_path}"
+    else
+      flash[:notice] = "File not found"
     end
   end
 
@@ -20,7 +21,11 @@ class BlocksController < ApplicationController
   private
 
   def valid_file?(path)
-    File.file?(path)
+    unless path.nil?
+      return File.file?('app/' + path + '.rb')
+    end
+
+    false
   end
 
   def write_spec(path, code)
