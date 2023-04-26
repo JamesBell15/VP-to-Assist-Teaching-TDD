@@ -18,27 +18,6 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   "colour": 230
 },
 {
-  "type": "it",
-  "message0": "it %1 %2",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "IT_VALUE",
-      "text": "label test"
-    },
-    {
-      "type": "input_statement",
-      "name": "IT_STATEMENT"
-    }
-  ],
-  "inputsInline": true,
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
-},
-{
   "type": "path_to",
   "message0": "Path to %1",
   "args0": [
@@ -97,12 +76,15 @@ const blocks = Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "describe",
-  "message0": "Describe %1 %2",
+  "message0": "Describe %1 %2 %3",
   "args0": [
     {
       "type": "field_input",
       "name": "DESCRIBE_VALUE",
       "text": "class"
+    },
+    {
+      "type": "input_dummy"
     },
     {
       "type": "input_statement",
@@ -117,12 +99,15 @@ const blocks = Blockly.defineBlocksWithJsonArray([
 },
 {
   "type": "context",
-  "message0": "context %1 %2",
+  "message0": "context %1 %2 %3",
   "args0": [
     {
       "type": "field_input",
       "name": "CONTEXT_VALUE",
       "text": "conditions"
+    },
+    {
+      "type": "input_dummy"
     },
     {
       "type": "input_statement",
@@ -134,6 +119,30 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-}
+},
+{
+  "type": "it",
+  "message0": "it %1 %2 %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "IT_VALUE",
+      "text": "label test"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_statement",
+      "name": "IT_STATEMENT"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
 ]);
 
