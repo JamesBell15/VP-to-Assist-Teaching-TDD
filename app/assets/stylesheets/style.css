@@ -18,3 +18,8 @@
   transform: translate3d(0,0,0) !important;
   transition:0s all ease-in-out;
 }
+
+.show-white-space {
+  white-space: pre-wrap;
+  display: inline-block;
+}
