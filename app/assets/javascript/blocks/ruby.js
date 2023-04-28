@@ -144,5 +144,40 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   "tooltip": "",
   "helpUrl": ""
 },
+{
+  "type": "statement_block",
+  "message0": "{ %1 }",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "STATEMENT_VALUE",
+      "text": "statement block"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "let",
+  "message0": "let %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "LET_NAME",
+      "text": "variable name"
+    },
+    {
+      "type": "input_value",
+      "name": "STATEMENT_VALUE"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
 ]);
 

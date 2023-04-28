@@ -13,7 +13,7 @@
 
     try {
       document.getElementById("block").value = code;
-      showBanner();
+      // showBanner();
 
     } catch (error) {
       console.log(error);
@@ -76,30 +76,6 @@
     "contents": [
       {
         "kind": "block",
-        "type": "controls_if"
-      },
-      {
-        "kind": "block",
-        "type": "controls_repeat_ext"
-      },
-      {
-        "kind": "block",
-        "type": "logic_compare"
-      },
-      {
-        "kind": "block",
-        "type": "logic_boolean"
-      },
-      {
-        "kind": "block",
-        "type": "math_number"
-      },
-      {
-        "kind": "block",
-        "type": "math_arithmetic"
-      },
-      {
-        "kind": "block",
         "type": "text"
       },
       {
@@ -133,6 +109,14 @@
       {
         "kind": "block",
         "type": "path_to"
+      },
+      {
+        "kind": "block",
+        "type": "let"
+      },
+      {
+        "kind": "block",
+        "type": "statement_block"
       }
     ]
   }

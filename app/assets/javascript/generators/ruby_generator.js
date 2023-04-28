@@ -95,3 +95,22 @@ rubyGenerator['path_to'] = function(block) {
   const code = value;
   return code + "__";
 };
+
+// let
+rubyGenerator['let'] = function(block) {
+  const value = block.getFieldValue('LET_NAME');
+  const statement = rubyGenerator.statementToCode(
+      block, 'STATEMENT_VALUE', rubyGenerator.PRECEDENCE);
+  const code = value;
+  return `let(:${code}) ${statement}`;
+};
+
+// statement block
+rubyGenerator['statement_block'] = function(block) {
+  const value = block.getFieldValue('STATEMENT_VALUE');
+  const code = value;
+  return `{ ${code} }`;
+};
+
+
+
