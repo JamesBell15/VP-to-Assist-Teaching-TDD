@@ -8,9 +8,14 @@ class BlocksController < ApplicationController
 
     if valid_file?(file)
       write_spec(spec_path, code)
-      flash[:notice] = "Success check #{spec_path}"
+      flash.now[:alert] = "Success check #{spec_path}"
     else
-      flash[:notice] = "File not found"
+      flash.now[:alert] = "File not found"
+    end
+
+    respond_to do |format|
+      format.js
+      format.html
     end
   end
 
