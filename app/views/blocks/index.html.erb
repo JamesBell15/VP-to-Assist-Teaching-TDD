@@ -1,10 +1,11 @@
 <%= stylesheet_link_tag "style" %>
-<%= javascript_include_tag "banner_alert" %>
+
 <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
   </div>
 <% end %>
+
 <p>
   To use:<br/>
   write the path to file relative to 'app/' without the .rb<br/>
@@ -14,15 +15,12 @@
   <table>
     <td>
       <div class="blockly-editor">
-        <button class="mode-maker mdl-button" hidden id="edit">Edit</button>
-
-        <form action="/blocks" method="post" data-remote="true">
-          <input id="block" name="block" value="nil" type="hidden"/>
-          <button class="mode-edit mdl-button mdl-js-button" id="done" type="submit">Done</button>
-        </form>
-
-        <button class="mode-blockly mdl-button mdl-js-button" hidden id="save">Save</button>
-
+        <%= form_with(url: blocks_path, method: :post, remote: true) do |form| %>
+          <%= form.hidden_field(:block, id: 'block', value: "nil") %>
+          <%= button_tag(type: 'submit', id: "done", class: "mode-edit mdl-button mdl-js-button") do %>
+           Done
+          <% end %>
+        <% end %>
         <div id="blocklyDiv" style="height: 800px; width:1000px;">
 
         </div>
@@ -30,7 +28,7 @@
     </td>
     <td>
       <div id='textarea' class='show-white-space'>
-        lol
+        Your code will appear here
       </div>
     </td>
   </table>
@@ -38,6 +36,7 @@
 
   <script src="https://unpkg.com/blockly"></script>
 
+  <%= javascript_include_tag "banner_alert", defer: "defer" %>
   <%= javascript_include_tag "blocks/ruby", defer: "defer" %>
   <%= javascript_include_tag "generators/ruby_generator", defer: "defer" %>
   <%= javascript_include_tag "ruby_toolbox", defer: "defer" %>
