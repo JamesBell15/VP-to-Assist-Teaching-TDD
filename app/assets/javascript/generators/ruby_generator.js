@@ -46,7 +46,6 @@ rubyGenerator['p'] = function(block) {
 };
 
 // describe
-// it block
 rubyGenerator['describe'] = function(block) {
   const value = block.getFieldValue('DESCRIBE_VALUE')
   const statement = rubyGenerator.statementToCode(
@@ -93,7 +92,7 @@ rubyGenerator['eq'] = function(block) {
 rubyGenerator['path_to'] = function(block) {
   const value = block.getFieldValue('PATH');
   const code = value;
-  return code + "__";
+  return code + `__\n# Tests for the ${value} file`;
 };
 
 // let
