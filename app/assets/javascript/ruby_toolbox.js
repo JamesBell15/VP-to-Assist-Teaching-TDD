@@ -105,9 +105,15 @@ let workspace = Blockly.inject('blocklyDiv',
 )
 
 const updateCode = (event) => {
-  const code = rubyGenerator.workspaceToCode(workspace)
-  console.log(code)
-  document.getElementById('textarea').innerHTML = code.replace('__', '')
+  if (event.type == Blockly.Events.BLOCK_CHANGE ||
+      event.type == Blockly.Events.BLOCK_CREATE ||
+      event.type == Blockly.Events.BLOCK_DELETE ||
+      event.type == Blockly.Events.BLOCK_MOVE) {
+    const code = rubyGenerator.workspaceToCode(workspace)
+
+    document.getElementById('textarea').innerHTML = code.replace('__', '')
+  }
+
 }
 
 // to keep toolbox open after block selection
