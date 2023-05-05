@@ -179,5 +179,4 @@ const blocks = Blockly.defineBlocksWithJsonArray([
   "tooltip": "",
   "helpUrl": ""
 },
-]);
-
+])
