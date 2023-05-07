@@ -10,6 +10,6 @@
 
 * Start Creating!
 
-* (Ruby files wanting to be tested must exist first within diss/app)
+* Ruby files wanting to be tested must exist first within diss/app
 
 * Run `rake spec` to run the test suite
