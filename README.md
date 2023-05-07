@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: ruby 3.0.0
 
-Things you may want to cover:
+* Run `bundle install` to make sure gems are up to date
 
-* Ruby version
+* Run `sh updateJsAndRun.sh` to make sure the JavaScript is properly compiled
 
-* System dependencies
+* Navigate to localhost:3000
 
-* Configuration
+* Start Creating!
 
-* Database creation
+* (Ruby files wanting to be tested must exist first within diss/app)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Run `rake spec` to run the test suite
