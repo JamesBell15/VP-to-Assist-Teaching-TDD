@@ -2,6 +2,8 @@
 
 * Ruby version: ruby 3.0.0
 
+* Ruby on Rails version: rails 7.0.4
+
 * Run `bundle install` to make sure gems are up to date
 
 * Run `sh updateJsAndRun.sh` to make sure the JavaScript is properly compiled
